@@ -1,0 +1,143 @@
+// 重置
+html,body {
+    margin: 0;
+    padding: 0;
+}
+ul,menu,dir {
+    margin: 0;
+    padding: 0;
+}
+
+// 基本属性
+// 颜色
+$is-primary: #8fd03a;
+$is-link: #3273dc;
+$is-info: #1496ed;
+$is-wraning: #ffdd57;
+$is-danger: #ff3860;
+// 尺寸 怎样设置一个类
+.is-small {
+    font-size: .75rem;
+}
+.is-small {
+    font-size: 1.25rem;
+}
+.is-large {
+    font-size: 1.5rem;
+}
+
+//style or state
+
+// helper
+.is-clearfix {
+    &::after {
+        clear: both;
+        content: " ";
+        display: block;
+    }
+}
+.is-pulled-left {
+    float: left;
+}
+.is-pulled-right {
+    float: right;
+}
+.is-marginless {
+    margin: 0 !important;
+}
+.is-paddingless {
+    padding: 0 !important;
+}
+.is-radiusless {
+    border-radius: 0 !important;
+}
+
+
+
+// mixin
+@mixin border-radius($radius:5px) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+@mixin prefixer($property, $value) {
+
+}
+
+@mixin blockOrHidden($boolean: true) {
+    @if $boolean {
+        @debug "$boolean is #{$boolean}";
+        display: block;
+    }
+    @else {
+        @debug "$boolean is #{$boolean}";
+        display: none;
+    }
+}
+.block {
+    @include blockOrHidden();
+}
+.hidden {
+    @include blockOrHidden(false);
+}
+
+
+
+@mixin border-shadow($shadow...) {
+    @if length($shadow) >= 1 {
+        @include prefixer(box-shadow, $shadow);
+    }
+}
+
+
+// to和through
+@for $i from 1 to 3 {
+    .item-#{$i} {width: 2em * $i}
+}
+
+//while循环
+$types: 4;
+$type-width: 20px;
+@while $types > 0 {
+    .while-#{$types} {
+        width: $type-width + $types;
+    }
+    $types: $types - 1;
+}
+
+//fake grid
+@mixin grid($cols, $mgn) {
+    float: left;
+    margin-right: $mgn;
+    margin-bottom: $mgn;
+    width: (100% - ($cols - 1) * $mgn) / $cols;
+    &:nth-child(#{$cols}n){
+        margin-right: 0;
+    }
+}
+
+.equalImg {
+    list-style: none;
+    @include grid(4, 2%);
+    img {
+        width: 100%;
+    }
+}
+
+
+
+@mixin typography-size($size: 1) {
+    font-size: $size;
+}
+
+
+.container {
+    background: lighten($color: #ff3860, $amount: 0.6);
+    @include border-radius(6px);
+}
+
+// https://www.youtube.com/watch?v=EKvzabk35cU
+
+
+
+

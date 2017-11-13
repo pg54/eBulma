@@ -1,0 +1,101 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+ul, menu, dir {
+  margin: 0;
+  padding: 0;
+}
+
+.is-small {
+  font-size: .75rem;
+}
+
+.is-small {
+  font-size: 1.25rem;
+}
+
+.is-large {
+  font-size: 1.5rem;
+}
+
+.is-clearfix::after {
+  clear: both;
+  content: " ";
+  display: block;
+}
+
+.is-pulled-left {
+  float: left;
+}
+
+.is-pulled-right {
+  float: right;
+}
+
+.is-marginless {
+  margin: 0 !important;
+}
+
+.is-paddingless {
+  padding: 0 !important;
+}
+
+.is-radiusless {
+  border-radius: 0 !important;
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.item-1 {
+  width: 2em;
+}
+
+.item-2 {
+  width: 4em;
+}
+
+.while-4 {
+  width: 24px;
+}
+
+.while-3 {
+  width: 23px;
+}
+
+.while-2 {
+  width: 22px;
+}
+
+.while-1 {
+  width: 21px;
+}
+
+.equalImg {
+  list-style: none;
+  float: left;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 23.5%;
+}
+
+.equalImg:nth-child(4n) {
+  margin-right: 0;
+}
+
+.equalImg img {
+  width: 100%;
+}
+
+.container {
+  background: #ff3b62;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
