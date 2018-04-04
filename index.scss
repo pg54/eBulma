@@ -140,4 +140,23 @@ $type-width: 20px;
 
 
 
+@mixin animation($options: ()) {
+    $options: map-merge((
+        animationName: animation,
+        duration: 1,
+        waitTime: 0,
+        timingFunction: linear,
+        iterationCount: infinite
+    ), $options)
+}
+// https://www.w3cplus.com/preprocessor/sass-animation-keyframes.html
+
+
+//rem与px单位转换
+https://www.w3cplus.com/preprocessor/sass-px-to-rem-with-mixin-and-function.html
+
+
+
+
+
 
